@@ -52,7 +52,7 @@ To run this project locally, follow these steps:
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/terraria-companion.git
+git clone https://github.com/MaXDmitR/terraria-companion.git
 cd terraria-companion
 ```
 
