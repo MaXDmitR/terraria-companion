@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terraria Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top-nav">
+        <div class="logo">TERRARIA COMPANION</div>
+        <div class="nav-tabs">
+            <button class="active">ITEM CATALOG</button>
+            <button>CRAFTING CALCULATOR</button>
+            
+        </div>
+    </header>
+
+    <div class="main-layout">
+
+        <div id="dynamic-views-container" style="display: flex; flex: 1; overflow: hidden;">
+
+            <div id="catalog-view" style="display: flex; flex: 1; width: 100%;">
+                
+                <aside class="sidebar-left">
+                    <button class="category-btn active" data-type="weapon">
+                        <div class="category-icon-box">
+                            <img src="http://localhost:3000/data/img_sprites/Iron_Broadsword.png" alt="Зброя"
+                                style="max-width: 40px; max-height: 40px;" onerror="this.style.display='none'">
+                        </div>
+                        <span>Weapon</span>
+                    </button>
+                    <button class="category-btn" data-type="armor">
+                        <div class="category-icon-box">
+                            <img src="http://localhost:3000/data/img_sprites/Gold_Chainmail.png" alt="Armor"
+                                style="max-width: 40px; max-height: 40px;" onerror="this.style.display='none'">
+                        </div>
+                        <span>Armor</span>
+                    </button>
+                    <button class="category-btn" data-type="accessory">
+                        <div class="category-icon-box">
+                            <img src="http://localhost:3000/data/img_sprites/Fishron_Wings.png" alt="Accessories"
+                                style="max-width: 40px; max-height: 40px;" onerror="this.style.display='none'">
+                        </div>
+                        <span>Accessories</span>
+                    </button>
+                    <button class="category-btn" data-type="material">
+                        <div class="category-icon-box">
+                            <img src="http://localhost:3000/data/img_sprites/Demonite_Bar.png" alt="Materials"
+                                style="max-width: 40px; max-height: 40px;" onerror="this.style.display='none'">
+                        </div>
+                        <span>Materials</span>
+                    </button>
+                </aside>
+
+                <main class="content-area">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search items...">
+                    </div>
+
+                    <div class="list-scroll-wrapper">
+                        <div class="items-grid" id="items-container">
+                            </div>
+                        <button id="load-more-btn" class="load-more-btn" style="display: none;">Show More...</button>
+                    </div>
+                </main>
+            </div>
+
+
+            <div id="crafting-view" style="display: none; flex: 1; flex-direction: column; padding: 20px; overflow-y: auto;">
+                <h1 style="color: var(--accent-green); margin-bottom: 20px;">Crafting Tree</h1>
+
+                <div class="search-bar" style="margin-bottom: 30px;">
+                    <input type="text" id="craft-search-input"
+                        placeholder="Enter the name of the item you want to craft (e.g., Zenith)...">
+                </div>
+
+                <div id="crafting-tree-container" style="color: #ddd;">
+                    <p style="text-align: center; color: #888;">Enter the name of the item you want to craft (e.g., Zenith).</p>
+                </div>
+            </div>
+
+
+            <div id="bestiary-view" style="display: none; flex: 1; flex-direction: column; padding: 20px; overflow-y: hidden; width: 100%;">
+                <h1 style="color: #ff6b6b; margin-bottom: 20px; text-align: center;">Bestiary & Drops</h1>
+                
+                <div class="search-bar" style="margin-bottom: 20px;">
+                    <input type="text" id="npc-search-input" placeholder="Search enemies and bosses (e.g., Eye of Cthulhu)...">
+                </div>
+
+                <div class="list-scroll-wrapper">
+                    <div class="items-grid" id="npc-container">
+                        </div>
+                </div>
+            </div>
+
+        </div> <aside class="sidebar-right">
+            <h2>My Build</h2>
+
+            <div class="armor-row">
+                <div class="slot-wrapper">
+                    <label>Head</label>
+                    <div class="build-slot empty" data-slot="head"></div>
+                </div>
+                <div class="slot-wrapper">
+                    <label>Chest</label>
+                    <div class="build-slot empty" data-slot="torso"></div>
+                </div>
+                <div class="slot-wrapper">
+                    <label>Legs</label>
+                    <div class="build-slot empty" data-slot="legs"></div>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <label>World Difficulty</label>
+                <div class="diff-buttons">
+                    <button class="diff-btn active" data-diff="normal">Normal</button>
+                    <button class="diff-btn" data-diff="expert">Expert</button>
+                    <button class="diff-btn" data-diff="master">Master</button>
+                </div>
+
+                <div class="toggle-wrapper disabled" id="demon-heart-wrapper">
+                    <label class="switch">
+                        <input type="checkbox" id="demon-heart-cb" disabled>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">Demon Heart (+1)</span>
+                </div>
+            </div>
+
+            <div class="slot-wrapper" style="margin-top: 5px;">
+                <label>Accessories</label>
+                <div id="accessories-container">
+                    </div>
+            </div>
+
+            <div class="build-summary">
+                <h3>Build Summary</h3>
+                <div id="total-defense" class="total-stat">🛡️ Defense: 0</div>
+                <div id="set-bonus-display" class="set-bonus"></div>
+                <ul id="build-effects-list" class="effects-list">
+                    </ul>
+            </div>
+        </aside>
+    </div>
+
+    <div id="item-modal-overlay" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+
+            <div class="modal-header">
+                <div id="modal-icon-box" class="modal-icon-box">
+                    <img id="modal-item-img" src="" alt="Item Image">
+                </div>
+                <h2 id="modal-item-name">Item Name</h2>
+            </div>
+
+            <div class="modal-body">
+                <table id="modal-stats-table" class="stats-table">
+                    </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+
+</html>

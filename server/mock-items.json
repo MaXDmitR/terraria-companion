@@ -1,0 +1,83 @@
+[
+  {
+    "id": "item_zenith",
+    "name": "ZENITH",
+    "name_ua": "ЗЕНІТ",
+    "category_type": "weapon",
+    "stats": [
+      { "type": "melee_damage", "value": 190, "prefix": "+40" }
+    ]
+  },
+  {
+    "id": "item_solar_helmet",
+    "name": "Solar Flare Helmet",
+    "name_ua": "Сонячний шолом",
+    "category_type": "head",
+    "stats": [
+      { "type": "defense", "value": 24, "prefix": "+17" }
+    ]
+  },
+  {
+    "id": "item_solar_chestplate",
+    "name": "Solar Flare Breastplate",
+    "name_ua": "Сонячний нагрудник",
+    "category_type": "body",
+    "stats": [
+      { "type": "defense", "value": 30, "prefix": "+20" }
+    ]
+  },
+  {
+    "id": "item_solar_leggings",
+    "name": "Solar Flare Leggings",
+    "name_ua": "Сонячні поножі",
+    "category_type": "legs",
+    "stats": [
+      { "type": "defense", "value": 26, "prefix": "+18" }
+    ]
+  },
+  {
+    "id": "item_solar_sword",
+    "name": "Solar Eruption",
+    "name_ua": "Сонячний вибух",
+    "category_type": "weapon",
+    "stats": [
+      { "type": "melee_damage", "value": 100, "prefix": "+20" }
+    ]
+  },
+  {
+    "id": "item_solar_flare_bow",
+    "name": "Solar Flare Bow",
+    "name_ua": "Сонячний лук",
+    "category_type": "weapon",
+    "stats": [
+      { "type": "ranged_damage", "value": 90, "prefix": "+18" }
+    ]
+  },
+  {
+    "id": "item_solar_flare_staff",
+    "name": "Solar Flare Staff",
+    "name_ua": "Сонячний посох",
+    "category_type": "weapon",
+    "stats": [
+      { "type": "magic_damage", "value": 80, "prefix": "+15" }
+    ]
+  },
+  {
+    "id": "item_solar_flare_spear",
+    "name": "Solar Flare Spear",
+    "name_ua": "Сонячне коп'є",
+    "category_type": "weapon",
+    "stats": [
+      { "type": "melee_damage", "value": 110, "prefix": "+22" }
+    ]
+  },
+  {
+    "id": "item_solar_flare_greatsword",
+    "name": "Solar Flare Greatsword",
+    "name_ua": "Сонячний великий меч",
+    "category_type": "weapon",
+    "stats": [
+      { "type": "melee_damage", "value": 120, "prefix": "+25" }
+    ]
+  }
+]
