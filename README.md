@@ -10,7 +10,7 @@ A full-stack, Single Page Application (SPA) designed to serve as an ultimate com
 
 ## 📸 Preview
 
-*(Add your screenshots to a folder named `docs` or `assets` and update the links below)*
+
 
 | Item Catalog | Crafting Tree | Build Planner |
 | :---: | :---: | :---: |
@@ -45,38 +45,66 @@ A full-stack, Single Page Application (SPA) designed to serve as an ultimate com
 
 ---
 
-## 🚀 Installation & Setup
+# 🚀 Installation & Setup
 
 To run this project locally, follow these steps:
 
-### 1. Clone the repository
+## 1. Clone the Repository
+
 ```bash
-git clone [https://github.com/your-username/terraria-companion.git](https://github.com/your-username/terraria-companion.git)
+git clone https://github.com/your-username/terraria-companion.git
 cd terraria-companion
-2. Install dependencies
+```
+
+## 2. Install Dependencies
+
 Navigate to the server directory and install the required npm packages:
 
-Bash
+```bash
 cd server
 npm install
-3. Environment Variables
-Create a .env file in the server directory and add your MongoDB connection string:
+```
 
-Фрагмент коду
+## 3. Environment Variables
+
+Create a `.env` file in the `server` directory and add your MongoDB connection string:
+
+```env
 MONGO_URI=mongodb+srv://<username>:<password>@cluster...
-4. Run the application
+```
+
+## 4. Run the Application
+
 Start the backend server:
 
-Bash
+```bash
 npm start
-The server will run on http://localhost:3000.
+```
 
-Open index.html in your browser (or use a live server extension) to access the frontend application.
+The server will run on:
 
-🧠 System Architecture
-The application is built on a decoupled Client-Server architecture.
-The backend exposes a RESTful API designed with modular controllers (itemController, craftingController, buildController) to handle specific business logic. Instead of heavy relational tables, the database utilizes MongoDB's document-oriented structure, perfectly suiting the highly polymorphic nature of in-game items.
-The frontend consumes these JSON endpoints and handles all View rendering dynamically without page reloads.
+```text
+http://localhost:3000
+```
 
-📜 License
-This project is created for educational and portfolio purposes. All game assets, sprites, and names belong to Re-Logic (Terraria).
+Open `index.html` in your browser (or use a Live Server extension) to access the frontend application.
+
+---
+
+# 🧠 System Architecture
+
+The application is built on a **decoupled Client–Server architecture**.
+
+The backend exposes a **RESTful API** designed with modular controllers (`itemController`, `craftingController`, `buildController`) to handle specific business logic.
+
+Instead of heavy relational tables, the database utilizes **MongoDB's document-oriented structure**, which perfectly suits the highly polymorphic nature of Terraria's in-game items.
+
+The frontend consumes these JSON endpoints and handles all view rendering dynamically without page reloads.
+
+---
+
+# 📜 License
+
+This project is created for educational and portfolio purposes.
+
+All game assets, sprites, names, and related intellectual property belong to **Re-Logic** and **Terraria**.
